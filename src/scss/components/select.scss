@@ -1,0 +1,140 @@
+.app-select,
+.ui-select {
+   position: relative;
+   width: 100%;
+   max-width: 320px;
+
+   &.open {
+      .select__back {
+         pointer-events: all;
+      }
+
+      .select__list {
+         opacity: 1;
+         pointer-events: all;
+      }
+
+      .select__title .ui-icon_chevron {
+         rotate: 180deg;
+      }
+   }
+
+   &.is-hover .select__title {
+      background-color: $white300;
+   }
+}
+
+.select {
+   &__header {
+      position: relative;
+   }
+
+   &__back {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+   }
+
+   &__title {
+      position: relative;
+      z-index: 2;
+      background-color: #fff;
+      border-radius: 36px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 20px;
+      cursor: pointer;
+      @include body-small;
+      color: $dark900;
+      transition:
+         background-color 0.2s ease,
+         color 0.2s ease;
+
+      &:hover:not(.is-disabled) {
+         background-color: $white300;
+      }
+
+      &.placeholder span {
+         color: $text-secondary;
+      }
+
+      .ui-icon_chevron {
+         color: inherit;
+         transition: rotate 0.2s ease;
+      }
+   }
+
+   &__content {
+      position: relative;
+      z-index: 3;
+   }
+
+   &__list {
+      translate: 0 8px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px $onphoto15;
+      z-index: 2;
+      max-height: 240px;
+      overflow: auto;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      padding: 8px 0;
+   }
+
+   &__item {
+      cursor: pointer;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 20px;
+      @include body-small;
+      color: $text-primary;
+      transition: background-color 0.2s ease;
+
+      &:hover,
+      &.select__item_state-hover {
+         background-color: $white300;
+      }
+
+      &::after {
+         content: "";
+         flex: 0 0 14px;
+         width: 14px;
+         height: 12px;
+         background: url(../img/icons/checkmark-accent.svg) no-repeat center /
+            contain;
+         opacity: 0;
+      }
+
+      &.selected::after {
+         opacity: 1;
+      }
+   }
+}
+
+.ui-icon {
+   display: block;
+   flex-shrink: 0;
+
+   &_chevron {
+      width: 16px;
+      height: 16px;
+   }
+
+   &_checkmark {
+      width: 14px;
+      height: 12px;
+   }
+}

@@ -1,0 +1,56 @@
+.ui-checkbox {
+   position: relative;
+   display: inline-flex;
+   cursor: pointer;
+
+   input {
+      display: none;
+   }
+
+   .square {
+      --size: 24px;
+      border-radius: 6px;
+      border: 1px solid $dark300;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+         background-color 0.2s ease,
+         border-color 0.2s ease;
+
+      &::after {
+         content: "";
+         width: 14px;
+         height: 12px;
+         background: url(../img/icons/checkmark.svg) no-repeat center / contain;
+         opacity: 0;
+         transition: opacity 0.2s ease;
+      }
+   }
+   &:has(input:checked) {
+      .square {
+         background-color: $accentColor;
+         border-color: $accentColor;
+         &::after {
+            opacity: 1;
+         }
+      }
+   }
+
+   &_dark {
+      .square {
+         background-color: $ondark15;
+         border-color: transparent;
+      }
+      &:has(input:checked) {
+         .square {
+            background-color: $accentColor;
+            border-color: $accentColor;
+            &::after {
+               opacity: 1;
+            }
+         }
+      }
+   }
+}

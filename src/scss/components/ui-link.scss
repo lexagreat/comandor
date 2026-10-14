@@ -1,0 +1,146 @@
+.ui-link {
+   display: inline-flex;
+   gap: 8px;
+   align-items: center;
+   justify-content: center;
+   border: none;
+   background: none;
+
+   cursor: pointer;
+   @include button-small;
+   text-decoration: none;
+   color: $text-primary;
+   height: 44px;
+   padding: 0 20px;
+   border-radius: 36px;
+   transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+   &:hover:not(.is-disabled):not([aria-disabled="true"]),
+   &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+      color: $accentColor;
+   }
+
+   &:active:not(.is-disabled):not([aria-disabled="true"]),
+   &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+      color: $accentColor;
+   }
+
+   &.is-disabled,
+   &[aria-disabled="true"] {
+      pointer-events: none;
+      cursor: default;
+      color: $text-white500;
+   }
+
+   &_ondark {
+      color: $text-white500;
+
+      &:hover:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &:active:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &.is-disabled,
+      &[aria-disabled="true"] {
+         color: $text-primary;
+      }
+   }
+
+   &_pill {
+      color: $text-secondary;
+
+      &:hover:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+         background-color: $white300;
+         color: $text-primary;
+      }
+
+      &:active:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+         background-color: $white300;
+         color: $text-primary;
+      }
+
+      &.is-disabled,
+      &[aria-disabled="true"] {
+         background-color: transparent;
+         color: $text-white500;
+      }
+   }
+
+   &_underline {
+      padding: 0;
+      height: unset;
+      @include label-small;
+      color: $text-secondary;
+      text-decoration: underline;
+
+      &:hover:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $text-primary;
+      }
+
+      &:active:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &.is-disabled,
+      &[aria-disabled="true"] {
+         color: $dark500;
+      }
+   }
+
+   &_underline-ondark {
+      padding: 0;
+      height: unset;
+      @include label-small;
+
+      color: $text-white500;
+      text-decoration: underline;
+
+      &:hover:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+         color: white;
+      }
+
+      &:active:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &.is-disabled,
+      &[aria-disabled="true"] {
+         color: $dark700;
+      }
+   }
+
+   &_lg {
+      padding: 0;
+      height: unset;
+      @include button-large;
+      color: $dark900;
+
+      &:hover:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-hover:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &:active:not(.is-disabled):not([aria-disabled="true"]),
+      &.ui-link_state-active:not(.is-disabled):not([aria-disabled="true"]) {
+         color: $accentColor;
+      }
+
+      &.is-disabled,
+      &[aria-disabled="true"] {
+         color: $text-white500;
+      }
+   }
+}

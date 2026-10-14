@@ -1,0 +1,109 @@
+$tablet: 1024px;
+$mobile: 568px;
+
+$boldFont: "sans-serif";
+$mainFont: "Roboto", sans-serif;
+
+$accentColor: #c0411e;
+$dark900: #2f3c43;
+$dark700: #6d777b;
+$dark500: #979da1;
+$dark300: #c1c5c7;
+$dark150: #e0e2e3;
+$dark50: #f5f5f6;
+
+$text-primary: #465561;
+$text-secondary: #87919b;
+$text-white500: #e1e1eb;
+
+$white300: #f2f2f8;
+
+$ondark10: #ffffff1a;
+$ondark15: #ffffff26;
+$ondark30: #ffffff4d;
+$onbg50: #2f3c4380;
+$onphoto15: #2f3c4326;
+
+@mixin h1 {
+   font-family: $boldFont;
+   font-weight: 700;
+   font-size: 48px;
+   line-height: 110.00000000000001%;
+   @media (max-width: $tablet) {
+      font-size: 38px;
+   }
+   @media (max-width: $mobile) {
+      font-size: 22px;
+   }
+}
+@mixin h2 {
+   font-family: $boldFont;
+   font-weight: 700;
+   font-size: 38px;
+   line-height: 110.00000000000001%;
+   @media (max-width: $tablet) {
+      font-size: 28px;
+   }
+   @media (max-width: $mobile) {
+      font-size: 20px;
+   }
+}
+@mixin h3 {
+   font-family: $boldFont;
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 110.00000000000001%;
+   @media (max-width: $tablet) {
+      font-size: 22px;
+   }
+   @media (max-width: $mobile) {
+      font-size: 16px;
+   }
+}
+@mixin body-large {
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 150%;
+}
+@mixin body-small {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 140%;
+   @media (max-width: $mobile) {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+   }
+}
+
+@mixin label-small {
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 100%;
+}
+@mixin caption-reg {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 130%;
+}
+@mixin caption-bold {
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 100%;
+}
+@mixin caption-small {
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 100%;
+}
+@mixin button-small {
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 100%;
+}
+@mixin button-large {
+   font-family: $boldFont;
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 100%;
+}

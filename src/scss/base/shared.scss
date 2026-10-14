@@ -1,0 +1,119 @@
+.collapse:not(.collapse_show) {
+   display: none;
+}
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   font-family: $mainFont;
+}
+.main {
+   flex: 1;
+   // padding-top: var(--header);
+}
+
+.circle {
+   --size: 32px;
+   flex: 0 0 var(--size);
+   width: var(--size);
+   height: var(--size);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.square {
+   --size: 32px;
+   flex: 0 0 var(--size);
+   width: var(--size);
+   height: var(--size);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+label {
+   cursor: pointer;
+}
+.pc {
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.tablet {
+   display: none;
+   @media (max-width: $tablet) {
+      display: block;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.mobile {
+   display: none;
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: block;
+   }
+}
+.pc-tablet {
+   display: flex;
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.tablet-mobile {
+   display: none;
+   @media (max-width: $tablet) {
+      display: flex;
+   }
+}
+
+.h1 {
+   @include h1;
+}
+
+.h2 {
+   @include h2;
+}
+
+.h3 {
+   @include h3;
+}
+
+.body-large {
+   @include body-large;
+}
+
+.body-small {
+   @include body-small;
+}
+
+.label-small {
+   @include label-small;
+}
+
+.caption-reg {
+   @include caption-reg;
+}
+
+.caption-bold {
+   @include caption-bold;
+}
+
+.caption-small {
+   @include caption-small;
+}
+
+.button-small {
+   @include button-small;
+}
+
+.button-large {
+   @include button-large;
+}

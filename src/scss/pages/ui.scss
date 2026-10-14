@@ -1,0 +1,108 @@
+.ui-page {
+   min-height: 100vh;
+   padding: 48px 40px 64px;
+   background-color: $dark300;
+   font-family: $mainFont;
+}
+
+.ui-kit {
+   display: grid;
+   grid-template-columns: 120px 1fr;
+   gap: 32px 24px;
+   align-items: center;
+
+   & + & {
+      margin-top: 64px;
+   }
+}
+
+.ui-kit__label {
+   @include label-small;
+   color: $dark700;
+   text-transform: uppercase;
+   letter-spacing: 0.04em;
+}
+
+.ui-kit__row {
+   display: grid;
+   grid-template-columns: repeat(7, minmax(0, 1fr));
+   gap: 16px;
+   align-items: center;
+
+   &_links {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+   }
+}
+
+.ui-kit_inputs {
+   grid-template-columns: 120px 1fr 1fr;
+   align-items: stretch;
+}
+
+.ui-kit__theme-label {
+   @include label-small;
+   color: $dark700;
+   text-transform: uppercase;
+   letter-spacing: 0.04em;
+   padding: 16px 24px;
+   border-radius: 12px 12px 0 0;
+   background-color: $dark150;
+
+   &_dark {
+      color: $text-white500;
+      background-color: $dark900;
+   }
+}
+
+.ui-kit__surface {
+   padding: 24px;
+   border-radius: 0 0 12px 12px;
+
+   &_light {
+      background-color: $dark150;
+   }
+
+   &_dark {
+      background-color: $dark900;
+   }
+}
+
+.ui-kit__heading {
+   grid-column: 1 / -1;
+   @include h3;
+   color: $dark900;
+   margin-bottom: -8px;
+}
+
+.ui-kit_select {
+   grid-template-columns: 120px minmax(0, 320px);
+}
+
+.ui-kit_tabs {
+   grid-template-columns: 1fr;
+
+   .ui-kit__tabs-body {
+      grid-column: 1 / -1;
+   }
+}
+
+.ui-kit_checkboxes {
+   grid-template-columns: 120px 1fr 1fr;
+   align-items: stretch;
+}
+
+.ui-kit__checkbox-cell {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 24px;
+   border-radius: 0 0 12px 12px;
+
+   &_light {
+      background-color: $dark150;
+   }
+
+   &_dark {
+      background-color: $dark900;
+   }
+}

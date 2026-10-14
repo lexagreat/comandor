@@ -1,0 +1,164 @@
+.ui-button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   border: none;
+   border-radius: 36px;
+   cursor: pointer;
+   font-family: $mainFont;
+   @include button-small;
+   padding: 0px 28px;
+   height: 56px;
+   transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease;
+   white-space: nowrap;
+
+   &:disabled,
+   &.is-disabled {
+      cursor: default;
+      pointer-events: none;
+   }
+
+   &_primary {
+      background-color: $dark900;
+      color: #fff;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $accentColor;
+         color: #fff;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: $text-primary;
+         color: #fff;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $dark900;
+         color: $text-secondary;
+      }
+   }
+
+   &_secondary {
+      background-color: #fff;
+      color: $dark900;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $accentColor;
+         color: #fff;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: #fff;
+         color: $accentColor;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $white300;
+         color: $text-white500;
+      }
+   }
+   &_tert {
+      background-color: $text-primary;
+      color: #fff;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $accentColor;
+         color: #fff;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: $dark900;
+         color: #fff;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $text-primary;
+         color: $dark500;
+      }
+   }
+
+   &_small {
+      height: 44px;
+      padding: 0 20px;
+   }
+
+   &_ghost {
+      background-color: transparent;
+      color: $dark900;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $text-white500;
+         color: $dark900;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: #fff;
+         color: $dark900;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $white300;
+         color: $text-white500;
+      }
+   }
+   &_ghost-fill {
+      background-color: white;
+      color: $dark900;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $text-white500;
+         color: $dark900;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: #fff;
+         color: $dark900;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $white300;
+         color: $text-white500;
+      }
+   }
+   &_primary-blue {
+      background-color: $dark900;
+      color: #fff;
+
+      &:hover:not(:disabled):not(.is-disabled),
+      &.ui-button_state-hover:not(:disabled):not(.is-disabled) {
+         background-color: $text-primary;
+         color: #fff;
+      }
+
+      &:active:not(:disabled):not(.is-disabled),
+      &.ui-button_state-active:not(:disabled):not(.is-disabled) {
+         background-color: $text-primary;
+         color: #fff;
+      }
+
+      &:disabled,
+      &.is-disabled {
+         background-color: $dark900;
+         color: $text-secondary;
+      }
+   }
+}

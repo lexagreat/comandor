@@ -1,0 +1,63 @@
+.ui-input {
+   display: block;
+   width: 100%;
+   height: 55px;
+   padding: 0 16px;
+   border: 1px solid #ffffff;
+   border-radius: 16px;
+   font-family: $mainFont;
+   @include body-small;
+   background-color: #fff;
+   color: $text-primary;
+   transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+   &::placeholder {
+      color: $dark300;
+   }
+
+   &:hover:not(:disabled),
+   &.ui-input_state-hover:not(:disabled) {
+      background-color: $white300;
+      border-color: $text-white500;
+   }
+
+   &:disabled {
+      cursor: not-allowed;
+      background-color: $dark50;
+      color: $dark500;
+      border-color: $dark150;
+      opacity: 0.5;
+
+      &::placeholder {
+         color: $dark500;
+      }
+   }
+
+   &_dark {
+      background-color: $ondark10;
+      color: #fff;
+      border-color: transparent;
+
+      &::placeholder {
+         color: $dark500;
+      }
+
+      &:hover:not(:disabled),
+      &.ui-input_state-hover:not(:disabled) {
+         background-color: $ondark15;
+         border-color: transparent;
+      }
+
+      &:disabled {
+         background-color: $ondark10;
+         color: $dark700;
+         border-color: transparent;
+
+         &::placeholder {
+            color: $dark700;
+         }
+      }
+   }
+}
