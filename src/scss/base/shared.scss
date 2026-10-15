@@ -9,7 +9,14 @@
 }
 .main {
    flex: 1;
-   // padding-top: var(--header);
+   padding-top: calc(var(--header) + 30px);
+   @media (max-width: $tablet) {
+      padding-top: var(--header);
+   }
+}
+.container {
+   padding: 0 var(--container);
+   margin: 0 auto;
 }
 
 .circle {
@@ -116,4 +123,28 @@ label {
 
 .button-large {
    @include button-large;
+}
+
+.rounded-link {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   @include button-large;
+   color: $dark900;
+   border-radius: 120px;
+   background-color: #f2f2f8;
+   transition: 0.3s;
+   cursor: pointer;
+   &:hover {
+      background-color: $accentColor;
+      color: white;
+   }
+   @media (max-width: $tablet) {
+      @include h3;
+   }
+   @media (max-width: $mobile) {
+      height: fit-content;
+      padding: 14px 24px;
+   }
 }

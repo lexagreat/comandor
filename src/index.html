@@ -9,7 +9,134 @@
 <body>
    <div class="wrapper">
       @@include('components/_header.html')
-      <main class="main"></main>
+      <main class="main">
+         <section class="home-hero">
+            <div class="container">
+               <div class="home-hero__wrapper">
+                  <div class="home-hero__main">
+                     <div class="home-hero__text">
+                        <h1 class="h1 home-hero__title">Профессиональное управление коммерческой недвижимостью</h1>
+                        <p class="body-small">Подбираем, управляем и развиваем коммерческие объекты по всей России
+                           с идивидуальным подходом к каждому арендатору и полное сопровождение на всех этапах
+                           сотрудничества.</p>
+                     </div>
+                     <a href="#" class="home-hero__button ui-button ui-button_primary-blue">
+                        <img src="img/icons/avito-btn.svg" alt="">
+                        <span>Наши объекты на Авито</span>
+                     </a>
+                  </div>
+                  <div class="home-hero__visual">
+                     <div class="home-hero__image">
+                        <img src="img/home/hero-banner.png" alt="">
+                     </div>
+                     <ul class="home-hero__list">
+                        <li class="home-hero__item">
+                           <h4 class="h2 home-hero__number">25+</h4>
+                           <span class="body-small">лет на рынке недвижимости</span>
+                        </li>
+                        <li class="home-hero__item">
+                           <h4 class="h2 home-hero__number">топ 100</h4>
+                           <span class="body-small">ведущих ритейлеров страны</span>
+                        </li>
+                        <li>
+                           <a href="#" class="home-hero__item">
+                              <h4 class="h2 home-hero__number">470</h4>
+                              <span class="body-small">магазинов в 119 населённых пунктах</span>
+                              <i style="rotate: -90deg;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2"
+                                       stroke-linecap="round" />
+                                 </svg>
+
+                              </i>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="home-objects">
+            <div class="container">
+               <div class="home-objects__wrapper">
+                  <div class="home-objects__header">
+                     <h2 class="h2 home-objects__title">Наши объекты</h2>
+                     <div class="ui-tabs">
+                        <label>
+                           Торговые центры
+                           <input checked type="radio" value="0" name="home-objects">
+                        </label>
+                        <label>
+                           Стрит-ритейл
+                           <input type="radio" value="1" name="home-objects">
+                        </label>
+                        <label>
+                           Другие <span class="pc-tablet" style="margin-left: 4px;"> форматы</span>
+                           <input type="radio" value="2" name="home-objects">
+                        </label>
+                     </div>
+                  </div>
+                  <div class="home-objects__main">
+                     <div class="home-objects__item home-object">
+                        <div class="home-object__image">
+                           <img src="img/home/objects-item.webp" alt="">
+                        </div>
+                        <div class="home-object__main">
+                           <h3 class="h3 home-object__title">ТК Атмосфера дома</h3>
+                           <p class="body-small home-object__subtitle">г.Красноярск, ул. Академика Вавилова, 1, стр. 39
+                           </p>
+                        </div>
+                     </div>
+                     <div class="home-objects__item home-object">
+                        <div class="home-object__image">
+                           <img src="img/home/objects-item.webp" alt="">
+                        </div>
+                        <div class="home-object__main">
+                           <h3 class="h3 home-object__title">ТЦ Роща</h3>
+                           <p class="body-small home-object__subtitle">г.Красноярск, ул. Тельмана, 30Г</p>
+                        </div>
+                     </div>
+                     <div class="home-objects__item home-object">
+                        <div class="home-object__image">
+                           <img src="img/home/objects-item.webp" alt="">
+                        </div>
+                        <div class="home-object__main">
+                           <h3 class="h3 home-object__title">ТЦ Енисей</h3>
+                           <p class="body-small home-object__subtitle">г.Красноярск, ул. 60 лет Октября, 48</p>
+                        </div>
+                     </div>
+                     <div class="home-objects__item home-object">
+                        <div class="home-object__image">
+                           <img src="img/home/objects-item.webp" alt="">
+                        </div>
+                        <div class="home-object__main">
+                           <h3 class="h3 home-object__title">ТЦ Мозаика</h3>
+                           <p class="body-small home-object__subtitle">г.Железногорск, пр. Ленинградский, 55</p>
+                        </div>
+                     </div>
+                     <div class="home-objects__item home-object">
+                        <div class="home-object__image">
+                           <img src="img/home/objects-item.webp" alt="">
+                        </div>
+                        <div class="home-object__main">
+                           <h3 class="h3 home-object__title">ТЦ Рябина</h3>
+                           <p class="body-small home-object__subtitle">г.Красноярск, ул. Вильского, 28Д</p>
+                        </div>
+                     </div>
+                     <a href="#" class="home-objects__link rounded-link">
+                        <span>Смотреть объекты</span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M21.4255 6.57586H9.0511L9.0511 8.32064L18.4371 8.32683L5.9575 20.8064L7.19494 22.0438L19.6745 9.56427L19.6807 18.9502L21.4255 18.9502V6.57586Z"
+                              fill="currentColor" stroke="currentColor" />
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
       @@include('components/_footer.html')
 
    </div>
