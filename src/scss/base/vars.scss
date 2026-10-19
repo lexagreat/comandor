@@ -110,13 +110,16 @@ $onphoto15: #2f3c4326;
 body {
    --header: 70px;
    --container: 40px;
+   --section-paddings: 100px 0;
 
    @media (max-width: $tablet) {
       --header: 72px;
       --container: 24px;
+      --section-paddings: 48px 0;
    }
    @media (max-width: $mobile) {
       --header: 58px;
       --container: 16px;
+      --section-paddings: 36px 0;
    }
 }

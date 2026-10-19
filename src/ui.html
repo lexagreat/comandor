@@ -137,11 +137,17 @@
 
       <div class="ui-kit ui-kit_select">
          <div class="ui-kit__heading">Select</div>
+         <div></div>
+         <div class="ui-kit__theme-label">Light</div>
+         <div class="ui-kit__theme-label ui-kit__theme-label_dark">Dark</div>
 
          <div class="ui-kit__label">Default</div>
-         <div class="app-select" id="ui-select-default" data-select data-selected-id="1"></div>
-
-
+         <div class="ui-kit__surface ui-kit__surface_light">
+            <div class="app-select" id="ui-select-default" data-select data-selected-id="1"></div>
+         </div>
+         <div class="ui-kit__surface ui-kit__surface_dark">
+            <div class="app-select app-select_dark" id="ui-select-dark" data-select data-selected-id="1"></div>
+         </div>
       </div>
 
       <div class="ui-kit ui-kit_tabs">
@@ -201,7 +207,7 @@
          }
          new Select(el, {
             data: regionSelectData,
-            selectedId: el.dataset.selectedId || 1,
+            placeholder: "Выберите регион",
          });
       });
    </script>

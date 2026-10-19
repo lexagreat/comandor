@@ -1,6 +1,8 @@
 .ui-checkbox {
    position: relative;
    display: inline-flex;
+   align-items: center;
+   gap: 8px;
    cursor: pointer;
 
    input {
@@ -27,6 +29,24 @@
          opacity: 0;
          transition: opacity 0.2s ease;
       }
+      @media (max-width: $mobile) {
+         --size: 18px;
+         &::after {
+            width: 10px;
+            height: 8px;
+         }
+      }
+   }
+   p {
+      color: $dark900;
+      a {
+         color: $dark900;
+         text-decoration: underline;
+      }
+      @media (max-width: $mobile) {
+         font-size: 12px;
+         line-height: 150%;
+      }
    }
    &:has(input:checked) {
       .square {
@@ -42,6 +62,13 @@
       .square {
          background-color: $ondark15;
          border-color: transparent;
+      }
+      p {
+         color: $text-white500;
+         a {
+            color: $text-white500;
+            text-decoration: underline;
+         }
       }
       &:has(input:checked) {
          .square {

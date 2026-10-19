@@ -8,6 +8,61 @@ if (document.querySelectorAll("[data-phone]").length) {
       const mask = IMask(item, maskOptions);
    });
 }
+const body = document.body;
+
+document.addEventListener("DOMContentLoaded", () => {
+   home();
+});
+function home() {
+   function application() {
+      const form = document.querySelector(".application-section");
+      if (!form) return;
+      const button = document.querySelector(
+         ".application-section__mobile-button",
+      );
+      const close = document.querySelector(
+         ".application-section__mobile-close",
+      );
+      const modal = document.querySelector(".application-section__modal");
+      if (button) {
+         button.addEventListener("click", () => {
+            modal.classList.add("open");
+            bodyLock();
+         });
+      }
+      if (close) {
+         close.addEventListener("click", () => {
+            modal.classList.remove("open");
+            bodyUnLock();
+         });
+      }
+      const regionSelectData = [
+         { id: 2, value: "Производство" },
+         { id: 3, value: "Торговля" },
+         { id: 4, value: "Сервис" },
+         { id: 5, value: "IT" },
+         { id: 6, value: "Другое" },
+         { id: 4, value: "Республика Хакасия" },
+      ];
+
+      new Select(form.querySelector("#application-select"), {
+         data: regionSelectData,
+         placeholder: "Сфера деятельности*",
+      });
+   }
+   function trust() {
+      const swiper = new Swiper(".home-trust .swiper", {
+         slidesPerView: 1,
+         spaceBetween: 24,
+         navigation: {
+            nextEl: ".home-trust__next",
+            prevEl: ".home-trust__prev",
+         },
+      });
+   }
+   application();
+   trust();
+}
 
 function accordion(linkSelector, contentSelector) {
    // получаем линки
@@ -219,7 +274,9 @@ class Select {
       <div class="select__header">
          <div class="select__title" data-type="input">
             <span>${placeholder}</span>
-            <img class="ui-icon ui-icon_chevron" src="img/icons/chevron-down.svg" width="16" height="16" alt="">
+            <svg class="ui-icon ui-icon_chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+               <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
          </div>
       </div>
       <div class="select__content">
@@ -288,7 +345,6 @@ function popupClose(popupActive, doUnlock = true) {
 }
 
 function bodyLock() {
-   console.log("bodyLock");
    const wrapperElement = document.querySelector(".wrapper");
    const lockPaddingValue = wrapperElement
       ? window.innerWidth - wrapperElement.offsetWidth + "px"
@@ -311,7 +367,6 @@ function bodyLock() {
 }
 
 function bodyUnLock() {
-   console.log("bodyUnLock");
    setTimeout(function () {
       if (lockPadding.length > 0) {
          for (let index = 0; index < lockPadding.length; index++) {

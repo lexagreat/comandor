@@ -75,7 +75,8 @@
 }
 
 .ui-kit_select {
-   grid-template-columns: 120px minmax(0, 320px);
+   grid-template-columns: 120px 1fr 1fr;
+   align-items: stretch;
 }
 
 .ui-kit_tabs {

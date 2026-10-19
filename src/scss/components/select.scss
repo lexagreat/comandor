@@ -2,7 +2,6 @@
 .ui-select {
    position: relative;
    width: 100%;
-   max-width: 320px;
 
    &.open {
       .select__back {
@@ -15,12 +14,38 @@
       }
 
       .select__title .ui-icon_chevron {
-         rotate: 180deg;
+         transform: rotate(180deg);
       }
    }
 
    &.is-hover .select__title {
       background-color: $white300;
+   }
+
+   &_dark {
+      .select__title {
+         background-color: $ondark10;
+         color: #fff;
+
+         &:hover:not(.is-disabled) {
+            background-color: $ondark15;
+         }
+
+         &.placeholder {
+            color: $dark500;
+         }
+         .ui-icon_chevron {
+            // color: #87919b;
+         }
+      }
+
+      &.is-hover .select__title {
+         background-color: $ondark15;
+      }
+
+      &.open .select__title {
+         background-color: $ondark15;
+      }
    }
 }
 
@@ -40,7 +65,7 @@
       position: relative;
       z-index: 2;
       background-color: #fff;
-      border-radius: 36px;
+      border-radius: 16px;
       height: 56px;
       display: flex;
       align-items: center;
@@ -58,13 +83,14 @@
          background-color: $white300;
       }
 
-      &.placeholder span {
+      &.placeholder {
          color: $text-secondary;
       }
 
       .ui-icon_chevron {
-         color: inherit;
-         transition: rotate 0.2s ease;
+         flex-shrink: 0;
+         color: currentColor;
+         transition: transform 0.2s ease;
       }
    }
 
@@ -131,6 +157,7 @@
    &_chevron {
       width: 16px;
       height: 16px;
+      color: currentColor;
    }
 
    &_checkmark {
