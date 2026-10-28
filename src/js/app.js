@@ -12,6 +12,13 @@ const body = document.body;
 
 document.addEventListener("DOMContentLoaded", () => {
    home();
+   header();
+   copypaste();
+   catalog();
+   tabs("[name='catalog-tabs']", ".catalog-page__content");
+   tabs("[name='catalog-tabs1']", ".catalog-page__content");
+   detail();
+   about();
 });
 function home() {
    function application() {
@@ -62,6 +69,278 @@ function home() {
    }
    application();
    trust();
+}
+function copypaste() {
+   const copyLink = document.querySelectorAll(".copypaste");
+   if (copyLink.length > 0) {
+      for (let i = 0; i < copyLink.length; i++) {
+         const link = copyLink[i];
+         link.addEventListener("click", () => {
+            const content = link.querySelector(".to-copy");
+            navigator.clipboard.writeText(content.textContent);
+            link.classList.add("copied");
+            setTimeout(() => {
+               link.classList.remove("copied");
+            }, 1000);
+         });
+      }
+   }
+}
+function header() {
+   const burgerBtn = document.querySelector(".burger-btn");
+   const headerMenu = document.querySelector(".header-menu");
+   const headerMenuBg = document.querySelector(".header-menu__bg");
+   if (burgerBtn && headerMenu) {
+      burgerBtn.addEventListener("click", () => {
+         burgerBtn.classList.toggle("active");
+         headerMenu.classList.toggle("open");
+      });
+   }
+   if (headerMenuBg) {
+      headerMenuBg.addEventListener("click", (e) => {
+         if (e.target.classList.contains("header-menu__bg")) {
+            burgerBtn.classList.remove("active");
+            headerMenu.classList.remove("open");
+         }
+      });
+   }
+}
+function catalog() {
+   const selectData = [
+      { id: 2, value: "Все типы недвижимости" },
+      { id: 3, value: "Коммерческая недвижимость" },
+      { id: 4, value: "Жилые помещения" },
+   ];
+
+   new Select(document.querySelector("#catalog-select1"), {
+      data: selectData,
+      placeholder: "Сфера деятельности*",
+      selectedId: 2,
+   });
+   new Select(document.querySelector("#catalog-select3"), {
+      data: selectData,
+      placeholder: "Сфера деятельности*",
+      selectedId: 2,
+   });
+   const selectData1 = [
+      { id: 2, value: "Все регионы" },
+      { id: 3, value: "Красноярский край" },
+      { id: 4, value: "Республика Хакасия" },
+      { id: 5, value: "Тюменская область" },
+      { id: 6, value: "Омская область" },
+      { id: 7, value: "Кемеровская область" },
+      { id: 8, value: "Новосибирская область" },
+      { id: 9, value: "Томская область" },
+      { id: 10, value: "Курганская область" },
+      { id: 11, value: "Свердловская область" },
+   ];
+
+   new Select(document.querySelector("#catalog-select2"), {
+      data: selectData1,
+      placeholder: "Сфера деятельности*",
+      selectedId: 2,
+   });
+}
+
+function detail() {
+   function hero() {
+      const swiper = new Swiper(".detail-hero .swiper", {
+         slidesPerView: 1,
+         spaceBetween: 24,
+         pagination: {
+            el: ".detail-hero .swiper-pagination",
+
+            clickable: true,
+         },
+      });
+   }
+   hero();
+}
+function about() {
+   function hero() {
+      const swiper = new Swiper(".about-hero .swiper", {
+         slidesPerView: 1,
+         spaceBetween: 24,
+         pagination: {
+            el: ".about-hero .swiper-pagination",
+            clickable: true,
+         },
+         effect: "fade",
+         fadeEffect: {
+            crossFade: true,
+         },
+         autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+         },
+         speed: 1000,
+         loop: true,
+      });
+   }
+
+   function awards() {
+      const swiper = new Swiper(".about-awards .swiper", {
+         slidesPerView: "auto",
+         spaceBetween: 24,
+         navigation: {
+            nextEl: ".about-awards__btn.next",
+            prevEl: ".about-awards__btn.prev",
+         },
+         breakpoints: {
+            1025: {
+               spaceBetween: 16,
+            },
+         },
+      });
+   }
+   function team() {
+      const swiper = new Swiper(".about-team .swiper", {
+         slidesPerView: 1,
+         spaceBetween: 24,
+         pagination: {
+            el: ".about-team .swiper-pagination",
+            clickable: true,
+         },
+         effect: "fade",
+         fadeEffect: {
+            crossFade: true,
+         },
+         autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+         },
+         speed: 1000,
+         loop: true,
+      });
+   }
+   hero();
+   awards();
+   team();
+   regionMapAccordion();
+}
+
+function regionMapAccordion() {
+   const section = document.querySelector(".about-regions");
+   if (!section) {
+      return;
+   }
+
+   const points = section.querySelectorAll(".region-point[data-region]");
+   const accordions = section.querySelectorAll(".region-accordion[data-region]");
+   if (!points.length || !accordions.length) {
+      return;
+   }
+
+   const REGION_ANIM_MS = 550;
+
+   const byRegion = (id) => ({
+      point: section.querySelector(`.region-point[data-region="${id}"]`),
+      accordion: section.querySelector(`.region-accordion[data-region="${id}"]`),
+   });
+
+   const isAnimating = () => section.dataset.regionAnimating === "1";
+
+   const lockAnimation = () => {
+      section.dataset.regionAnimating = "1";
+      window.setTimeout(() => {
+         delete section.dataset.regionAnimating;
+      }, REGION_ANIM_MS);
+   };
+
+   const regionShow = (el, instant = false) => {
+      if (el.classList.contains("collapse_show")) {
+         return;
+      }
+      el.classList.add("collapse");
+      el.style.height = "";
+      el.style.transition = "";
+      el.style.overflow = "";
+      if (instant) {
+         el.classList.add("is-instant");
+      }
+      requestAnimationFrame(() => {
+         el.classList.add("collapse_show");
+         if (instant) {
+            requestAnimationFrame(() => {
+               el.classList.remove("is-instant");
+            });
+         }
+      });
+   };
+
+   const regionHide = (el) => {
+      if (!el.classList.contains("collapse_show")) {
+         return;
+      }
+      el.classList.remove("collapse_show");
+   };
+
+   const closeAll = () => {
+      section
+         .querySelectorAll(".region-accordion__collapse")
+         .forEach(regionHide);
+      section.querySelectorAll(".region-accordion__header").forEach((header) => {
+         header.classList.remove("active");
+      });
+      points.forEach((point) => point.classList.remove("active"));
+   };
+
+   const openRegion = (regionId, instant = false) => {
+      const { point, accordion } = byRegion(regionId);
+      if (!accordion || !point) {
+         return;
+      }
+      const header = accordion.querySelector(".region-accordion__header");
+      const content = accordion.querySelector(".region-accordion__collapse");
+      closeAll();
+      header.classList.add("active");
+      regionShow(content, instant);
+      point.classList.add("active");
+      if (!instant) {
+         lockAnimation();
+      }
+   };
+
+   const toggleRegion = (regionId) => {
+      if (isAnimating()) {
+         return;
+      }
+      const { point, accordion } = byRegion(regionId);
+      if (!accordion || !point) {
+         return;
+      }
+      const header = accordion.querySelector(".region-accordion__header");
+      const content = accordion.querySelector(".region-accordion__collapse");
+      const isOpen = content.classList.contains("collapse_show");
+
+      if (isOpen) {
+         regionHide(content);
+         header.classList.remove("active");
+         point.classList.remove("active");
+         lockAnimation();
+         return;
+      }
+
+      openRegion(regionId);
+   };
+
+   points.forEach((point) => {
+      point.addEventListener("click", () => {
+         toggleRegion(point.dataset.region);
+      });
+   });
+
+   accordions.forEach((accordion) => {
+      const header = accordion.querySelector(".region-accordion__header");
+      header.addEventListener("click", () => {
+         toggleRegion(accordion.dataset.region);
+      });
+   });
+
+   const initial = section.querySelector(".region-point.active");
+   if (initial?.dataset.region) {
+      openRegion(initial.dataset.region, true);
+   }
 }
 
 function accordion(linkSelector, contentSelector) {
@@ -391,3 +670,23 @@ document.addEventListener("keydown", function (e) {
       popupClose(popupActive);
    }
 });
+function tabs(linkSelector, contentSelector) {
+   const inputs = document.querySelectorAll(linkSelector);
+   const contents = document.querySelectorAll(contentSelector);
+   let value;
+   if (inputs.length) {
+      inputs.forEach((item) => {
+         item.addEventListener("change", () => {
+            if (item.checked) {
+               value = item.value;
+            }
+            contents.forEach((item) => {
+               item.classList.remove("active");
+               if (item.getAttribute("data-tab") == value) {
+                  item.classList.add("active");
+               }
+            });
+         });
+      });
+   }
+}

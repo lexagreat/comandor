@@ -459,6 +459,21 @@
    border-radius: 36px;
    background-color: $dark900;
    padding: 40px 0;
+   &.light {
+      background: transparent;
+      .application-section {
+         &__title,
+         &__link {
+            color: $dark900;
+         }
+         &__subtitle {
+            color: $text-primary;
+         }
+         &__form {
+            background: $white300;
+         }
+      }
+   }
    @media (max-width: $tablet) {
       padding-bottom: 48px;
       padding-top: 32px;

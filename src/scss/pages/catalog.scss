@@ -1,0 +1,318 @@
+.catalog-hero {
+   margin-bottom: 48px;
+   @media (max-width: $tablet) {
+      margin-top: 32px;
+      margin-bottom: 32px;
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: 0;
+   }
+   // .catalog-hero__wrapper
+
+   &__wrapper {
+      background: $white300;
+      border-radius: 36px;
+      padding: 40px;
+      padding-top: 102px;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: $tablet) {
+         display: grid;
+         grid-template-columns: 1fr 200px;
+         column-gap: 48px;
+         row-gap: 32px;
+         padding: 32px;
+         padding-top: 56px;
+      }
+      @media (max-width: $mobile) {
+         padding: 36px 24px;
+      }
+   }
+
+   // .catalog-hero__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-column: span 2;
+      gap: 16px;
+      .ui-button {
+         width: fit-content;
+         @media (max-width: $mobile) {
+            margin-top: 8px;
+         }
+      }
+   }
+
+   // .catalog-hero__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .catalog-hero__info
+
+   &__info {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media (max-width: $mobile) {
+         display: none;
+      }
+   }
+
+   // .catalog-hero__text
+
+   &__text {
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+
+   // .catalog-hero__selects
+
+   &__selects {
+      display: flex;
+      gap: 16px;
+      .select {
+         &__title {
+            background: white;
+            color: $text-primary;
+            @media (max-width: $tablet) {
+               @include label-small;
+               height: 40px;
+               white-space: nowrap;
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         display: none;
+      }
+   }
+
+   // .catalog-hero__tabs
+
+   &__tabs {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      input {
+         display: none;
+      }
+      label {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         height: 50px;
+         padding-left: 8px;
+         padding-right: 20px;
+         transition: 0.3s;
+         background: white;
+         color: $text-primary;
+         .circle {
+            --size: 36px;
+            background: $white300;
+            @media (max-width: $tablet) {
+               --size: 32px;
+            }
+         }
+         @media (max-width: $tablet) {
+            height: 40px;
+            @include button-small;
+            gap: 8px;
+         }
+         &.circle {
+            padding: 0;
+            --size: 50px;
+            &:has(input:checked) {
+               background: $text-primary;
+               color: white;
+            }
+            @media (max-width: $tablet) {
+               --size: 40px;
+            }
+         }
+         &:not(.circle) {
+            border-radius: 36px;
+            &:has(input:checked) {
+               background: $text-primary;
+               color: white;
+               .circle {
+                  background: white;
+                  color: $text-primary;
+               }
+            }
+         }
+      }
+      @media (max-width: $tablet) {
+         justify-content: flex-end;
+      }
+      @media (max-width: $mobile) {
+         display: none;
+      }
+   }
+}
+.catalog-filters {
+   margin: 24px 0;
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+   }
+   &__items {
+      display: flex;
+      gap: 16px;
+      .catalog-hero__tabs {
+         display: flex;
+      }
+      .select {
+         flex: 1;
+         &__title {
+            color: $text-primary;
+            height: 40px;
+            background: $white300;
+         }
+      }
+   }
+}
+.catalog-page {
+   padding: var(--section-paddings);
+   padding-top: 0;
+   margin: var(--section-paddings);
+   margin-top: 0;
+   @media (max-width: $mobile) {
+      margin-bottom: 0;
+   }
+   // .catalog-page__wrapper
+
+   &__wrapper {
+   }
+}
+.catalog-list {
+   display: flex;
+   flex-direction: column;
+   gap: 74px;
+   @media (max-width: $tablet) {
+      gap: 32px;
+   }
+   @media (max-width: $mobile) {
+      gap: 24px;
+   }
+   // .catalog-list__items
+
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 20px;
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: 1fr;
+         gap: 16px;
+      }
+   }
+
+   // .catalog-list__pagination
+
+   &__pagination {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      align-items: center;
+      .ui-button {
+         background: $white300;
+      }
+      @media (max-width: $tablet) {
+         gap: 32px;
+      }
+      @media (max-width: $mobile) {
+         gap: 24px;
+      }
+   }
+}
+.app-pagination {
+   // .app-pagination__main
+
+   &__main {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 36px;
+      background: $white300;
+      gap: 8px;
+   }
+
+   // .app-pagination__pages
+
+   &__pages {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .circle {
+         --size: 36px;
+         @include button-small;
+         transition: 0.3s;
+         color: $text-primary;
+         &.active {
+            background: $dark900;
+            color: white;
+         }
+         @media (hover: hover) {
+            &:hover {
+               background: $dark900;
+               color: white;
+            }
+         }
+      }
+   }
+}
+.catalog-map {
+   &__canvas {
+      position: relative;
+      height: 700px;
+      background: $text-white500;
+      border-radius: 36px;
+      @media (max-width: $tablet) {
+         border-radius: 24px;
+         height: 600px;
+      }
+   }
+   &__active {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 450px;
+      .ui-button {
+         width: fit-content;
+         height: 44px;
+         @include button-small;
+         margin-top: 16px;
+      }
+      @media (max-width: $tablet) {
+         top: unset;
+         bottom: 20px;
+         left: 20px;
+         width: 311px;
+         .ui-button {
+            height: 40px;
+            margin-top: 6px;
+         }
+         .catalog-object {
+            &__image {
+               height: 136px;
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         width: unset;
+         left: 16px;
+         bottom: 16px;
+         right: 16px;
+      }
+   }
+}
