@@ -1,0 +1,387 @@
+.directions-hero {
+   padding-bottom: 100px;
+   @media (max-width: $tablet) {
+      padding-top: 24px;
+      padding-bottom: 48px;
+   }
+   @media (max-width: $mobile) {
+      padding-top: 16px;
+      padding-bottom: 36px;
+   }
+   // .directions-hero__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      @media (max-width: $tablet) {
+         gap: 32px;
+      }
+      @media (max-width: $mobile) {
+         gap: 16px;
+      }
+   }
+
+   // .directions-hero__image
+
+   &__image {
+      border-radius: 36px;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: $tablet) {
+         flex: 0 0 280px;
+      }
+      @media (max-width: $mobile) {
+         flex: 0 0 240px;
+
+         border-radius: 24px;
+      }
+   }
+
+   // .directions-hero__content
+
+   &__content {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      @media (max-width: $tablet) {
+         gap: 24px;
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 56px 32px;
+         border-radius: 36px;
+         background: $white300;
+      }
+      @media (max-width: $mobile) {
+         padding: 36px 24px;
+         border-radius: 24px;
+      }
+   }
+
+   // .directions-hero__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
+
+   // .directions-hero__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .directions-hero__text
+
+   &__text {
+      max-width: 755px;
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+}
+.directions-items {
+   padding-bottom: 76px;
+   @media (max-width: $tablet) {
+      padding: var(--section-paddings);
+   }
+   // .directions-items__wrapper
+
+   &__wrapper {
+   }
+
+   // .directions-items__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: $tablet) {
+         gap: 20px;
+      }
+      @media (max-width: $mobile) {
+         gap: 16px;
+      }
+   }
+
+   // .directions-items__item
+
+   &__item {
+   }
+}
+.direction-item {
+   padding: 24px 0;
+   display: flex;
+   gap: 40px;
+   @media (hover: hover) {
+      &:hover {
+         .direction-item__image {
+            img {
+               &:nth-child(1) {
+                  // opacity: 0;
+               }
+               &:nth-child(2) {
+                  opacity: 1;
+               }
+            }
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      padding: 20px;
+      gap: 24px;
+      flex-direction: column;
+      border-radius: 24px;
+      background: $white300;
+   }
+   @media (max-width: $mobile) {
+      gap: 16px;
+   }
+   // .direction-item__image
+
+   &__image {
+      position: relative;
+      flex: 0 0 755px;
+      border-radius: 120px;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         transition: 0.3s;
+         &:nth-child(1) {
+            position: relative;
+            z-index: 1;
+         }
+         &:nth-child(2) {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+         }
+      }
+      @media (max-width: 1441px) {
+         flex: 0 0 400px;
+      }
+      @media (max-width: $tablet) {
+         flex: 0 0 280px;
+         border-radius: 36px;
+      }
+      @media (max-width: $mobile) {
+         flex: 0 0 180px;
+      }
+   }
+
+   // .direction-item__main
+
+   &__main {
+      padding: 30px 0;
+      display: grid;
+      grid-template-columns: 580px 1fr;
+      column-gap: 20px;
+      row-gap: 77px;
+      @media (max-width: 1441px) {
+         grid-template-columns: 450px 1fr;
+      }
+      @media (max-width: $tablet) {
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         gap: unset;
+      }
+   }
+
+   // .direction-item__header
+
+   &__header {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 580px 1fr;
+      gap: 20px;
+      @media (max-width: 1441px) {
+         grid-template-columns: 450px 1fr;
+      }
+      @media (max-width: $tablet) {
+         display: flex;
+         flex-direction: column;
+         gap: 16px;
+      }
+      @media (max-width: $mobile) {
+         gap: 12px;
+      }
+   }
+
+   // .direction-item__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .direction-item__text
+
+   &__text {
+      color: $text-secondary;
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+
+   // .direction-item__labels
+
+   &__labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      li {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 33px;
+         padding: 0px 16px;
+         border-radius: 40px;
+         background: $white300;
+         @include label-small;
+         @media (max-width: $tablet) {
+            background: white;
+         }
+         @media (max-width: $mobile) {
+            padding: 0 12px;
+            height: 31px;
+         }
+      }
+      @media (max-width: $tablet) {
+         margin-top: 16px;
+      }
+      @media (max-width: $mobile) {
+         margin-top: 12px;
+      }
+   }
+   .ui-button {
+      width: fit-content;
+      @media (max-width: $tablet) {
+         margin: 0 auto;
+         margin-top: 24px;
+      }
+      @media (max-width: $mobile) {
+         margin-top: 16px;
+      }
+   }
+}
+.directions-how {
+   padding: var(--section-paddings);
+   // .directions-how__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      @media (max-width: $tablet) {
+         gap: 32px;
+      }
+      @media (max-width: $mobile) {
+         gap: 24px;
+      }
+   }
+
+   // .directions-how__header
+
+   &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @media (max-width: $tablet) {
+         gap: 16px;
+      }
+   }
+
+   // .directions-how__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .directions-how__text
+
+   &__text {
+      max-width: 600px;
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+
+   // .directions-how__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: 1fr;
+         gap: 12px;
+      }
+   }
+
+   // .directions-how__item
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 32px;
+      border-radius: 36px;
+      background: $white300;
+      @media (max-width: $tablet) {
+         padding: 24px;
+         border-radius: 24px;
+         gap: 16px;
+      }
+      @media (max-width: $mobile) {
+         padding: 20px;
+         border-radius: 20px;
+      }
+   }
+
+   // .directions-how__subheader
+
+   &__subheader {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .circle {
+         --size: 48px;
+         color: $accentColor;
+         background: white;
+         @media (max-width: $tablet) {
+            --size: 44px;
+         }
+      }
+      @media (max-width: $tablet) {
+         gap: 12px;
+      }
+   }
+
+   // .directions-how__subtitle
+
+   &__subtitle {
+      color: $dark900;
+   }
+
+   // .directions-how__subtext
+
+   &__subtext {
+      max-width: 600px;
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+}

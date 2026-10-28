@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
    catalog();
    tabs("[name='catalog-tabs']", ".catalog-page__content");
    tabs("[name='catalog-tabs1']", ".catalog-page__content");
+   tabs("[name='detail-path']", ".detail-path__tab");
    detail();
    about();
 });
@@ -226,7 +227,9 @@ function regionMapAccordion() {
    }
 
    const points = section.querySelectorAll(".region-point[data-region]");
-   const accordions = section.querySelectorAll(".region-accordion[data-region]");
+   const accordions = section.querySelectorAll(
+      ".region-accordion[data-region]",
+   );
    if (!points.length || !accordions.length) {
       return;
    }
@@ -235,7 +238,9 @@ function regionMapAccordion() {
 
    const byRegion = (id) => ({
       point: section.querySelector(`.region-point[data-region="${id}"]`),
-      accordion: section.querySelector(`.region-accordion[data-region="${id}"]`),
+      accordion: section.querySelector(
+         `.region-accordion[data-region="${id}"]`,
+      ),
    });
 
    const isAnimating = () => section.dataset.regionAnimating === "1";
@@ -279,9 +284,11 @@ function regionMapAccordion() {
       section
          .querySelectorAll(".region-accordion__collapse")
          .forEach(regionHide);
-      section.querySelectorAll(".region-accordion__header").forEach((header) => {
-         header.classList.remove("active");
-      });
+      section
+         .querySelectorAll(".region-accordion__header")
+         .forEach((header) => {
+            header.classList.remove("active");
+         });
       points.forEach((point) => point.classList.remove("active"));
    };
 
@@ -338,7 +345,7 @@ function regionMapAccordion() {
    });
 
    const initial = section.querySelector(".region-point.active");
-   if (initial?.dataset.region) {
+   if (initial && initial.dataset.region) {
       openRegion(initial.dataset.region, true);
    }
 }

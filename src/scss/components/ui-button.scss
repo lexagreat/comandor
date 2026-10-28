@@ -15,9 +15,7 @@
       color 0.2s ease,
       opacity 0.2s ease;
    white-space: nowrap;
-   @media (max-width: $mobile) {
-      font-size: 14px;
-   }
+
    &:disabled,
    &.is-disabled {
       cursor: default;

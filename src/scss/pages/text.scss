@@ -1,0 +1,38 @@
+.text-page {
+   padding: var(--section-paddings);
+   // .text-page__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media (max-width: $mobile) {
+         gap: 36px;
+      }
+   }
+
+   // .text-page__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .text-page__block
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .body-small {
+         @media (max-width: $mobile) {
+            @include caption-reg;
+         }
+      }
+   }
+
+   // .text-page__subtitle
+
+   &__subtitle {
+      color: $dark900;
+   }
+}

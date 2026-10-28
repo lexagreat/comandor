@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"New project",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main">
+         <section class="contacts-hero">
+            <div class="container">
+               <div class="contacts-hero__wrapper">
+                  <div class="contacts-hero__main">
+                     <h1 class="h1 contacts-hero__title">Контакты</h1>
+                     <div class="contacts-hero__item phone">
+                        <span class="label-small">Телефон для связи</span>
+                        <a class="h3" href="tel:+7 (391) 271-08-16">+7 (391) 271-08-16</a>
+                     </div>
+                     <button class="ui-button ui-button_primary">Записаться на встречу</button>
+                     <div class="contacts-hero__item email">
+                        <span class="label-small">Почта</span>
+                        <button class="h3 copypaste">
+                           <span class="to-copy">info@kn-komandor.ru</span>
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M7.25 18H19.75C20.44 18 21 17.44 21 16.75V4.25C21 3.56 20.44 3 19.75 3H7.25C6.56 3 6 3.56 6 4.25V16.75C6 17.44 6.56 18 7.25 18ZM19.5 16.5H7.5V4.5H19.5V16.5ZM5.75 21H18V19.5H5.75C5.06 19.5 4.5 18.94 4.5 18.25V6H3V18.25C3.00132 18.9789 3.29148 19.6776 3.80692 20.1931C4.32236 20.7085 5.02106 20.9987 5.75 21Z"
+                                 fill-rule="evenodd" clip-rule="evenodd" fill="#C1C5C7" />
+                           </svg>
+
+                        </button>
+                     </div>
+                  </div>
+                  <div class="contacts-hero__image">
+                     <img src="img/contacts/hero.webp" alt="">
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="contacts-map">
+            <div class="container">
+               <div class="contacts-map__wrapper">
+                  <div class="contacts-map__map"></div>
+                  <div class="contacts-map__office contacts-office">
+                     <div class="contacts-office__image">
+                        <img src="img/contacts/office.webp" alt="">
+                     </div>
+                     <div class="contacts-office__main">
+                        <h3 class="h3 contacts-office__title">Офис Командор <br> Недвижимость</h3>
+                        <span class="body-small">г.Красноярск, ул. Академика Вавилова, 1, стр. 39</span>
+                        <button class="ui-button ui-button_ghost ui-button_state-hover">
+                           <img src="img/icons/yandex-map.svg" alt="">
+                           <p style="white-space: nowrap;"><span class="pc-tablet">Построить</span> маршрут на Яндекс
+                              Картах</p>
+                        </button>
+                        <p class="body-small">
+                           ТК «Атмосфера дома» расположен на пересечении основных транспортных артерий города. Комплекс
+                           имеет удобные подъездные пути с двух сторон, а развитая сеть общественного транспорта
+                           обеспечивает высокую пешеходную и автомобильную доступность.
+                        </p>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+</body>
+
+</html>

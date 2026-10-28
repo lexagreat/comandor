@@ -459,35 +459,65 @@
                      <label>
                         Адрес объекта
 
-                        <input checked type="radio" value="0" name="home-objects">
+                        <input checked type="radio" value="address" name="detail-path">
                      </label>
                      <label>
                         Офис
-                        <input type="radio" value="1" name="home-objects">
+                        <input type="radio" value="office" name="detail-path">
                      </label>
 
                   </div>
-                  <div class="detail-path__content">
-                     <div class="detail-path__map"></div>
-                     <div class="detail-path__info">
-                        <div class="detail-path__address body-small">
-                           <img src="img/icons/map-marker.svg" alt="">
-                           <span>г. Красноярск, ул. Академика Вавилова, 1, стр. 39</span>
+                  <div data-tab="address" class="active detail-path__tab">
+                     <div class="detail-path__content">
+                        <div class="detail-path__map"></div>
+                        <div class="detail-path__info">
+                           <div class="detail-path__address body-small">
+                              <img src="img/icons/map-marker.svg" alt="">
+                              <span>г. Красноярск, ул. Академика Вавилова, 1, стр. 39</span>
+                           </div>
+                           <p class="body-small">
+                              ТК «Атмосфера дома» расположен на пересечении основных транспортных артерий города.
+                              Комплекс
+                              имеет удобные подъездные пути с двух сторон, а развитая сеть общественного транспорта
+                              обеспечивает высокую пешеходную и автомобильную доступность.
+                           </p>
+                           <div class="detail-path__parking">
+                              <span class="label-small">Парковка</span>
+                              <p class="body-small">1 200 мест, бесплатная парковка с круглосуточным освещением
+                                 и видеонаблюдением.</p>
+                           </div>
+                           <button class="ui-button ui-button_ghost ui-button_state-hover">
+                              <img src="img/icons/yandex-map.svg" alt="">
+                              <span>Построить маршрут на Яндекс Картах</span>
+                           </button>
                         </div>
-                        <p class="body-small">
-                           ТК «Атмосфера дома» расположен на пересечении основных транспортных артерий города. Комплекс
-                           имеет удобные подъездные пути с двух сторон, а развитая сеть общественного транспорта
-                           обеспечивает высокую пешеходную и автомобильную доступность.
-                        </p>
-                        <div class="detail-path__parking">
-                           <span class="label-small">Парковка</span>
-                           <p class="body-small">1 200 мест, бесплатная парковка с круглосуточным освещением
-                              и видеонаблюдением.</p>
+                     </div>
+                  </div>
+                  <div data-tab="office" class="detail-path__tab">
+                     <div class="contacts-map__wrapper">
+                        <div class="contacts-map__map"></div>
+                        <div class="contacts-map__office contacts-office">
+                           <div class="contacts-office__image">
+                              <img src="img/contacts/office.webp" alt="">
+                           </div>
+                           <div class="contacts-office__main">
+                              <h3 class="h3 contacts-office__title">Офис Командор <br> Недвижимость</h3>
+                              <span class="body-small">г.Красноярск, ул. Академика Вавилова, 1, стр. 39</span>
+                              <button class="ui-button ui-button_ghost ui-button_state-hover">
+                                 <img src="img/icons/yandex-map.svg" alt="">
+                                 <p style="white-space: nowrap;"><span class="pc-tablet">Построить</span> маршрут на
+                                    Яндекс
+                                    Картах</p>
+                              </button>
+                              <p class="body-small">
+                                 ТК «Атмосфера дома» расположен на пересечении основных транспортных артерий города.
+                                 Комплекс
+                                 имеет удобные подъездные пути с двух сторон, а развитая сеть общественного транспорта
+                                 обеспечивает высокую пешеходную и автомобильную доступность.
+                              </p>
+                           </div>
+
                         </div>
-                        <button class="ui-button ui-button_ghost ui-button_state-hover">
-                           <img src="img/icons/yandex-map.svg" alt="">
-                           <span>Построить маршрут на Яндекс Картах</span>
-                        </button>
                      </div>
                   </div>
                </div>

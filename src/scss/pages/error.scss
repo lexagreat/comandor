@@ -1,0 +1,33 @@
+.error-page {
+   padding: var(--section-paddings);
+   // .error-page__wrapper
+
+   &__wrapper {
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+   }
+
+   // .error-page__title
+
+   &__title {
+      color: $dark900;
+   }
+
+   // .error-page__text
+
+   &__text {
+      margin-top: 16px;
+      margin-bottom: 40px;
+      max-width: 600px;
+      @media (max-width: $tablet) {
+         max-width: 474px;
+      }
+      @media (max-width: $mobile) {
+         @include caption-reg;
+      }
+   }
+}
