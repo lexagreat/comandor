@@ -12,6 +12,11 @@
 
    &__wrapper {
    }
+   @media (max-width: 1500px) and (min-width: 1025px) {
+      .h1 {
+         font-size: 42px;
+      }
+   }
 }
 .about-why {
    .detail-why__list {
@@ -545,10 +550,15 @@
 
    &__main {
       position: relative;
+      border-radius: 36px;
+      overflow: hidden;
       & > img {
          width: 100%;
-         height: auto;
+         height: 100%;
          object-fit: cover;
+      }
+      @media (max-width: $tablet) {
+         border-radius: 24px;
       }
    }
 
@@ -581,6 +591,11 @@
          left: 12px;
          right: 12px;
          top: 12px;
+      }
+   }
+   @media (max-width: 1500px) and (min-width: 1025px) {
+      &__main {
+         height: 800px;
       }
    }
 }

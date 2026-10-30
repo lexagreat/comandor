@@ -152,7 +152,7 @@ svg path {
 }
 @font-face {
   font-family: "Europe";
-  src: local("europe_bold"), url("../fonts/europe_bold.woff2") format("woff2"), url("../fonts/europe_bold.woff") format("woff");
+  src: local("EUR_E__B"), url("../fonts/EUR_E__B.woff2") format("woff2"), url("../fonts/EUR_E__B.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -2089,6 +2089,23 @@ body.lock {
     font-size: 22px;
   }
 }
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .home-hero .h1 {
+    font-size: 42px;
+  }
+  .home-hero .h2 {
+    font-size: 32px;
+  }
+  .home-hero__item {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 32px 15px;
+  }
+  .home-hero__item .h2 {
+    white-space: nowrap;
+  }
+}
 
 .home-objects {
   padding: var(--section-paddings);
@@ -2394,6 +2411,11 @@ body.lock {
     display: none;
   }
 }
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .expert-item__labels li {
+    text-align: center;
+  }
+}
 
 .application-section {
   border-radius: 36px;
@@ -2668,6 +2690,13 @@ body.lock {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 12px;
+}
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .application-section__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 450px;
+            flex: 0 0 450px;
+  }
 }
 
 .home-network {
@@ -3839,6 +3868,11 @@ body.lock {
     width: 95px;
   }
 }
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .detail-hero .h2 {
+    font-size: 34px;
+  }
+}
 
 .detail-about {
   padding: var(--section-paddings);
@@ -4444,6 +4478,12 @@ body.lock {
     padding-bottom: 36px;
   }
 }
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .about-stats .h1 {
+    font-size: 42px;
+  }
+}
+
 .about-why .detail-why__list {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -5115,12 +5155,19 @@ body.lock {
 }
 .about-regions__main {
   position: relative;
+  border-radius: 36px;
+  overflow: hidden;
 }
 .about-regions__main > img {
   width: 100%;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .about-regions__main {
+    border-radius: 24px;
+  }
 }
 .about-regions__points {
   position: absolute;
@@ -5156,6 +5203,11 @@ body.lock {
     left: 12px;
     right: 12px;
     top: 12px;
+  }
+}
+@media (max-width: 1500px) and (min-width: 1025px) {
+  .about-regions__main {
+    height: 800px;
   }
 }
 
@@ -6072,6 +6124,7 @@ body.lock {
   padding: var(--section-paddings);
 }
 .text-page__wrapper {
+  max-width: 1375px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

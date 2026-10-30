@@ -167,6 +167,11 @@
          }
       }
    }
+   @media (max-width: 1500px) and (min-width: 1025px) {
+      .h2 {
+         font-size: 34px;
+      }
+   }
 }
 .detail-about {
    padding: var(--section-paddings);
