@@ -9,6 +9,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      @media (max-width: $mobile) {
+         height: 390px;
+      }
    }
 
    // .error-page__title

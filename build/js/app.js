@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
    tabs("[name='detail-path']", ".detail-path__tab");
    detail();
    about();
+   scrollerLinks();
 });
 function home() {
    function application() {
@@ -118,11 +119,7 @@ function catalog() {
       placeholder: "Сфера деятельности*",
       selectedId: 2,
    });
-   new Select(document.querySelector("#catalog-select3"), {
-      data: selectData,
-      placeholder: "Сфера деятельности*",
-      selectedId: 2,
-   });
+
    const selectData1 = [
       { id: 2, value: "Все регионы" },
       { id: 3, value: "Красноярский край" },
@@ -137,6 +134,11 @@ function catalog() {
    ];
 
    new Select(document.querySelector("#catalog-select2"), {
+      data: selectData1,
+      placeholder: "Сфера деятельности*",
+      selectedId: 2,
+   });
+   new Select(document.querySelector("#catalog-select3"), {
       data: selectData1,
       placeholder: "Сфера деятельности*",
       selectedId: 2,
@@ -220,6 +222,26 @@ function about() {
    regionMapAccordion();
 }
 
+function scrollerLinks() {
+   const links = document.querySelectorAll("[data-scroll-to]");
+   if (links.length > 0) {
+      for (let i = 0; i < links.length; i++) {
+         const link = links[i];
+         link.addEventListener("click", () => {
+            scrollToSelector(link.dataset.scrollTo);
+         });
+      }
+   }
+}
+function scrollToSelector(selector) {
+   const element = document.querySelector(selector);
+   if (element) {
+      window.scrollTo({
+         top: element.offsetTop - 100,
+         behavior: "smooth",
+      });
+   }
+}
 function regionMapAccordion() {
    const section = document.querySelector(".about-regions");
    if (!section) {

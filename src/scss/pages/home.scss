@@ -89,6 +89,7 @@
 
       @media (max-width: $mobile) {
          border-radius: 24px;
+         flex: 0 0 240px;
       }
       img {
          width: 100%;
@@ -131,6 +132,11 @@
       border-radius: 36px;
       position: relative;
       transition: 0.3s;
+
+      @media (max-width: 1500px) and (min-width: 1025px) {
+         gap: 52px;
+      }
+
       &:is(a) {
          @media (hover: hover) {
             &:hover {
@@ -299,6 +305,14 @@
    background-color: #f2f2f8;
    border-radius: 36px;
    overflow: hidden;
+   display: block;
+   @media (hover: hover) {
+      &:hover {
+         .catalog-object__title {
+            color: $accentColor;
+         }
+      }
+   }
    @media (max-width: $tablet) {
       border-radius: 24px;
    }
@@ -335,6 +349,7 @@
 
    &__title {
       color: $dark900;
+      transition: 0.3s;
    }
 
    // .home-object__subtitle
@@ -381,6 +396,7 @@
       }
       @media (max-width: $mobile) {
          margin-bottom: 8px;
+         max-width: 343px;
          gap: 16px;
       }
    }
@@ -465,6 +481,9 @@
          padding: 0 16px;
          @include label-small;
          color: $text-primary;
+         @media (max-width: 1480px) {
+            font-size: 10px;
+         }
       }
       @media (max-width: $mobile) {
          display: none;
@@ -495,6 +514,9 @@
          &__form {
             background: $white300;
          }
+      }
+      .select__title.placeholder {
+         color: #c1c5c7;
       }
    }
    @media (max-width: $tablet) {
@@ -616,6 +638,12 @@
 
    &__link {
       color: $text-white500;
+      transition: 0.3s;
+      @media (hover: hover) {
+         &:hover {
+            color: $accentColor;
+         }
+      }
    }
 
    // .application-section__form
@@ -651,6 +679,7 @@
          background-color: $onbg50;
          opacity: 0;
          pointer-events: none;
+         z-index: 200;
          &.open {
             opacity: 1;
             pointer-events: auto;
@@ -679,6 +708,7 @@
       }
       @media (max-width: $mobile) {
          position: absolute;
+
          top: 40px;
          left: 0;
          height: calc(100dvh - 34px);
@@ -751,10 +781,8 @@
 
    &__title {
       color: $dark900;
-      @media (max-width: $mobile) {
-         br {
-            display: none;
-         }
+      @media (max-width: 1500px) and (min-width: 1025px) {
+         font-size: 34px;
       }
    }
 
@@ -783,6 +811,9 @@
          flex: unset;
          border-radius: 24px;
       }
+      @media (max-width: $mobile) {
+         flex: 0 0 240px;
+      }
    }
 
    // .home-network__list
@@ -809,10 +840,15 @@
                gap: 50px;
                span {
                   &:nth-child(1) {
-                     flex: 0 0 112px;
+                     flex: 0 0 116px;
                   }
                }
             }
+         }
+      }
+      @media (max-width: 1480px) {
+         .h1 {
+            font-size: 42px;
          }
       }
       @media (max-width: $tablet) {
@@ -823,6 +859,10 @@
       }
       @media (max-width: $mobile) {
          grid-template-columns: 1fr;
+         gap: 12px;
+         .rounded-link {
+            margin-top: 12px;
+         }
       }
    }
 }
@@ -860,8 +900,10 @@
    // .home-trust__text
 
    &__text {
+      max-width: 600px;
       @media (max-width: $mobile) {
          @include caption-reg;
+         max-width: 344px;
       }
    }
 
@@ -935,6 +977,9 @@
       align-items: center;
       justify-content: center;
       height: 180px;
+      @media (max-width: 1480px) {
+         height: 160px;
+      }
       img {
          max-width: 90%;
       }
@@ -1042,6 +1087,9 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+      @media (max-width: 1480px) {
+         flex: 0 0 45%;
+      }
       @media (max-width: $tablet) {
          padding: 24px;
          gap: 20px;

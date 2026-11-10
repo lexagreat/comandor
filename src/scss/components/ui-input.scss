@@ -16,7 +16,9 @@
    &::placeholder {
       color: $dark300;
    }
-
+   &.error {
+      border-color: $accentColor;
+   }
    &:hover:not(:disabled),
    &.ui-input_state-hover:not(:disabled) {
       background-color: $white300;

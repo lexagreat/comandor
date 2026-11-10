@@ -6,7 +6,7 @@
    }
    @media (max-width: $mobile) {
       padding-top: 24px;
-      padding-bottom: 36px;
+      padding-bottom: 0;
    }
    // .detail-hero__wrapper
 
@@ -58,6 +58,21 @@
 
    &__title {
       color: $dark900;
+      .pc-tablet {
+         display: inline;
+         @media (max-width: $mobile) {
+            display: none;
+         }
+      }
+      .mobile {
+         display: none;
+         @media (max-width: $mobile) {
+            display: inline;
+         }
+      }
+      @media (max-width: 1480px) and (min-width: 1025px) {
+         font-size: 36px;
+      }
    }
 
    // .detail-hero__address
@@ -90,6 +105,7 @@
    &__list {
       display: flex;
       justify-content: space-between;
+      gap: 62px;
       li {
          display: flex;
          flex-direction: column;
@@ -226,7 +242,7 @@
       gap: 12px;
       @media (max-width: $mobile) {
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
          gap: 8px;
          width: 100%;
       }
@@ -263,6 +279,7 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+
       @media (max-width: $tablet) {
          gap: 24px;
       }
@@ -274,6 +291,10 @@
             &:has(input:checked) {
                background: $white300;
             }
+         }
+         @media (max-width: $mobile) {
+            width: fit-content;
+            grid-template-columns: repeat(2, 1fr);
          }
       }
    }
@@ -312,6 +333,12 @@
 }
 .detail-path {
    padding: var(--section-paddings);
+   .ui-tabs {
+      @media (max-width: $mobile) {
+         grid-template-columns: repeat(2, 1fr);
+         width: fit-content;
+      }
+   }
    // .detail-path__wrapper
 
    &__wrapper {
@@ -361,6 +388,12 @@
       height: 400px;
       border-radius: 36px;
       background: $white300;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
       @media (max-width: $tablet) {
          height: 300px;
          border-radius: 24px;
@@ -375,7 +408,7 @@
    // .detail-path__info
 
    &__info {
-      flex: 0 0 754px;
+      flex: 0 0 calc(754 / 1840 * 100%);
       display: flex;
       flex-direction: column;
       gap: 32px;
@@ -460,6 +493,9 @@
 
    &__title {
       color: $dark900;
+      @media (max-width: 1500px) and (min-width: 1025px) {
+         font-size: 34px;
+      }
       @media (max-width: $mobile) {
          br {
             display: none;
@@ -489,6 +525,12 @@
       .rounded-link {
          background: white;
          height: 240px;
+         @media (hover: hover) {
+            &:hover {
+               background: $accentColor;
+               color: white;
+            }
+         }
       }
       @media (max-width: $tablet) {
          grid-template-columns: 1fr;
@@ -566,6 +608,9 @@
 
    &__subtitle {
       color: $dark900;
+      @media (max-width: 1480px) and (min-width: 1025px) {
+         font-size: 22px;
+      }
    }
 
    // .detail-why__subtext

@@ -33,4 +33,9 @@
    input {
       display: none;
    }
+   @media (max-width: $mobile) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+   }
 }
