@@ -49,6 +49,9 @@
 
    &__main {
       max-width: 754px;
+      @media (max-width: 1480px) and (min-width: 1025px) {
+         flex: 0 0 461px;
+      }
       @media (max-width: $tablet) {
          max-width: unset;
       }
@@ -112,6 +115,7 @@
          gap: 8px;
          .h2 {
             color: $accentColor;
+            white-space: nowrap;
          }
       }
       @media (max-width: $tablet) {
@@ -185,7 +189,7 @@
    }
    @media (max-width: 1500px) and (min-width: 1025px) {
       .h2 {
-         font-size: 34px;
+         font-size: 32px;
       }
    }
 }

@@ -2045,6 +2045,11 @@ body.lock {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (max-width: 1480px) {
+  .home-hero__item i {
+    right: 24px;
+  }
+}
 @media (max-width: 1024px) {
   .home-hero__item {
     gap: 10px;
@@ -2188,6 +2193,19 @@ body.lock {
   -webkit-column-gap: 36px;
      -moz-column-gap: 36px;
           column-gap: 36px;
+}
+.home-objects__main .rounded-link {
+  font-size: 20px;
+}
+@media (max-width: 1024px) {
+  .home-objects__main .rounded-link {
+    font-size: 22px;
+  }
+}
+@media (max-width: 568px) {
+  .home-objects__main .rounded-link {
+    font-size: 16px;
+  }
 }
 @media (max-width: 1024px) {
   .home-objects__main {
@@ -3797,6 +3815,13 @@ body.lock {
 .detail-hero__main {
   max-width: 754px;
 }
+@media (max-width: 1480px) and (min-width: 1025px) {
+  .detail-hero__main {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 461px;
+            flex: 0 0 461px;
+  }
+}
 @media (max-width: 1024px) {
   .detail-hero__main {
     max-width: unset;
@@ -3881,6 +3906,7 @@ body.lock {
 }
 .detail-hero__list li .h2 {
   color: #c0411e;
+  white-space: nowrap;
 }
 @media (max-width: 1024px) {
   .detail-hero__list {
@@ -3984,7 +4010,7 @@ body.lock {
 }
 @media (max-width: 1500px) and (min-width: 1025px) {
   .detail-hero .h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 
@@ -6501,6 +6527,11 @@ body.lock {
   row-gap: 42px;
   padding-bottom: 22px;
 }
+@media (max-width: 1480px) and (min-width: 1025px) {
+  .contacts-hero__main {
+    grid-template-columns: 1fr 364px;
+  }
+}
 .contacts-hero__main .ui-button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -6580,7 +6611,7 @@ body.lock {
 }
 @media (max-width: 1480px) and (min-width: 1025px) {
   .contacts-hero__title {
-    font-size: 42px;
+    font-size: 40px;
   }
 }
 .contacts-hero__item {
@@ -6621,6 +6652,13 @@ body.lock {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 1480px) and (min-width: 1025px) {
+  .contacts-hero__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 487px;
+            flex: 0 0 487px;
+  }
 }
 @media (max-width: 1024px) {
   .contacts-hero__image {
